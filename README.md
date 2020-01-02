@@ -18,5 +18,5 @@ Initially written for autotyping username and passwords from Devolutions Remote 
 * Can start automatically with Windows
 
 ## How to use
-1. Copy Paster.exe to any folder
-2. Start it
+1. [Download](https://github.com/karleinarb/Paster/releases/download/1.0.0/Paster.exe) Paster.exe to any folder
+2. Run it

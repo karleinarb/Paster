@@ -60,6 +60,7 @@ namespace Paster
             action.Split = txt_Split.Text;
             action.EntryText = txt_EntryText.Text;
             action.EndText = txt_EndText.Text;
+            action.DelayMS = (int)num_DelayMS.Value;
             action.Hotkey = PasteAction.Hotkey;
 
             if(radio_None.Checked) { action.PastingAction = PasteAction.Action.None; }
@@ -75,6 +76,7 @@ namespace Paster
             txt_Split.Text = this.PasteAction.Split;
             txt_EntryText.Text = this.PasteAction.EntryText;
             txt_EndText.Text = this.PasteAction.EndText;
+            num_DelayMS.Value = this.PasteAction.DelayMS;
             if(this.PasteAction.Hotkey != null) { txt_Hotkey.Text = this.PasteAction.Hotkey.ToString(); }
             else { txt_Hotkey.Text = ""; }
             

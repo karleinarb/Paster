@@ -52,11 +52,15 @@
             this.txt_Hotkey = new System.Windows.Forms.TextBox();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.num_DelayMS = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.grp_General.SuspendLayout();
             this.grp_Paste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EntryInfo)).BeginInit();
             this.grp_Hotkey.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_DelayMS)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_EndText
@@ -64,7 +68,7 @@
             this.txt_EndText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_EndText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_EndText.Location = new System.Drawing.Point(116, 44);
+            this.txt_EndText.Location = new System.Drawing.Point(132, 44);
             this.txt_EndText.Multiline = true;
             this.txt_EndText.Name = "txt_EndText";
             this.txt_EndText.Size = new System.Drawing.Size(190, 22);
@@ -95,7 +99,7 @@
             this.txt_EntryText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_EntryText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_EntryText.Location = new System.Drawing.Point(116, 16);
+            this.txt_EntryText.Location = new System.Drawing.Point(132, 16);
             this.txt_EntryText.Multiline = true;
             this.txt_EntryText.Name = "txt_EntryText";
             this.txt_EntryText.Size = new System.Drawing.Size(190, 22);
@@ -173,7 +177,7 @@
             this.txt_Name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(50, 22);
+            this.txt_Name.Location = new System.Drawing.Point(64, 22);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(256, 20);
             this.txt_Name.TabIndex = 22;
@@ -214,7 +218,7 @@
             this.txt_Split.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Split.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Split.Location = new System.Drawing.Point(118, 115);
+            this.txt_Split.Location = new System.Drawing.Point(132, 115);
             this.txt_Split.MaxLength = 100;
             this.txt_Split.Name = "txt_Split";
             this.txt_Split.Size = new System.Drawing.Size(188, 20);
@@ -224,6 +228,9 @@
             // 
             this.grp_Paste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_Paste.Controls.Add(this.label6);
+            this.grp_Paste.Controls.Add(this.num_DelayMS);
+            this.grp_Paste.Controls.Add(this.label5);
             this.grp_Paste.Controls.Add(this.pb_EndInfo);
             this.grp_Paste.Controls.Add(this.pb_EntryInfo);
             this.grp_Paste.Controls.Add(this.txt_EntryText);
@@ -233,7 +240,7 @@
             this.grp_Paste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_Paste.Location = new System.Drawing.Point(12, 165);
             this.grp_Paste.Name = "grp_Paste";
-            this.grp_Paste.Size = new System.Drawing.Size(398, 77);
+            this.grp_Paste.Size = new System.Drawing.Size(398, 109);
             this.grp_Paste.TabIndex = 18;
             this.grp_Paste.TabStop = false;
             this.grp_Paste.Text = "Paste settings";
@@ -243,7 +250,7 @@
             this.pb_EndInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_EndInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_EndInfo.Image = global::Paster.Properties.Resources.Question;
-            this.pb_EndInfo.Location = new System.Drawing.Point(312, 44);
+            this.pb_EndInfo.Location = new System.Drawing.Point(331, 44);
             this.pb_EndInfo.Name = "pb_EndInfo";
             this.pb_EndInfo.Size = new System.Drawing.Size(22, 22);
             this.pb_EndInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -256,7 +263,7 @@
             this.pb_EntryInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_EntryInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_EntryInfo.Image = global::Paster.Properties.Resources.Question;
-            this.pb_EntryInfo.Location = new System.Drawing.Point(312, 16);
+            this.pb_EntryInfo.Location = new System.Drawing.Point(331, 16);
             this.pb_EntryInfo.Name = "pb_EntryInfo";
             this.pb_EntryInfo.Size = new System.Drawing.Size(22, 22);
             this.pb_EntryInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,7 +279,7 @@
             this.grp_Hotkey.Controls.Add(this.btn_ChangeHotkey);
             this.grp_Hotkey.Controls.Add(this.txt_Hotkey);
             this.grp_Hotkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_Hotkey.Location = new System.Drawing.Point(12, 248);
+            this.grp_Hotkey.Location = new System.Drawing.Point(12, 280);
             this.grp_Hotkey.Name = "grp_Hotkey";
             this.grp_Hotkey.Size = new System.Drawing.Size(398, 57);
             this.grp_Hotkey.TabIndex = 19;
@@ -283,7 +290,7 @@
             // 
             this.btn_ClearHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ClearHotkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClearHotkey.Location = new System.Drawing.Point(312, 17);
+            this.btn_ClearHotkey.Location = new System.Drawing.Point(317, 16);
             this.btn_ClearHotkey.Name = "btn_ClearHotkey";
             this.btn_ClearHotkey.Size = new System.Drawing.Size(70, 23);
             this.btn_ClearHotkey.TabIndex = 2;
@@ -295,7 +302,7 @@
             // 
             this.btn_ChangeHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ChangeHotkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ChangeHotkey.Location = new System.Drawing.Point(236, 17);
+            this.btn_ChangeHotkey.Location = new System.Drawing.Point(241, 16);
             this.btn_ChangeHotkey.Name = "btn_ChangeHotkey";
             this.btn_ChangeHotkey.Size = new System.Drawing.Size(70, 23);
             this.btn_ChangeHotkey.TabIndex = 1;
@@ -311,15 +318,15 @@
             this.txt_Hotkey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Hotkey.Location = new System.Drawing.Point(9, 19);
             this.txt_Hotkey.Name = "txt_Hotkey";
-            this.txt_Hotkey.Size = new System.Drawing.Size(223, 20);
+            this.txt_Hotkey.Size = new System.Drawing.Size(226, 20);
             this.txt_Hotkey.TabIndex = 0;
             // 
             // btn_Save
             // 
             this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Save.Location = new System.Drawing.Point(253, 311);
+            this.btn_Save.Location = new System.Drawing.Point(262, 342);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save.Size = new System.Drawing.Size(70, 23);
             this.btn_Save.TabIndex = 20;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -328,19 +335,57 @@
             // btn_Cancel
             // 
             this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cancel.Location = new System.Drawing.Point(334, 311);
+            this.btn_Cancel.Location = new System.Drawing.Point(340, 342);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.Size = new System.Drawing.Size(70, 23);
             this.btn_Cancel.TabIndex = 21;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Delay between entries";
+            // 
+            // num_DelayMS
+            // 
+            this.num_DelayMS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_DelayMS.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.num_DelayMS.Location = new System.Drawing.Point(132, 72);
+            this.num_DelayMS.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.num_DelayMS.Name = "num_DelayMS";
+            this.num_DelayMS.Size = new System.Drawing.Size(190, 20);
+            this.num_DelayMS.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(328, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Milliseconds";
+            // 
             // frm_ActionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 344);
+            this.ClientSize = new System.Drawing.Size(424, 376);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.grp_Hotkey);
@@ -359,6 +404,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_EntryInfo)).EndInit();
             this.grp_Hotkey.ResumeLayout(false);
             this.grp_Hotkey.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_DelayMS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,5 +434,8 @@
         private System.Windows.Forms.PictureBox pb_EndInfo;
         private System.Windows.Forms.PictureBox pb_EntryInfo;
         private System.Windows.Forms.Button btn_ClearHotkey;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown num_DelayMS;
+        private System.Windows.Forms.Label label5;
     }
 }

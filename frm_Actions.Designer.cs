@@ -41,6 +41,7 @@
             this.PastingAction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Split = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EntryText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelayMS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,6 +125,7 @@
             this.Split,
             this.EntryText,
             this.endTextDataGridViewTextBoxColumn,
+            this.DelayMS,
             this.hotkeyDataGridViewTextBoxColumn});
             this.dgv_Actions.DataSource = this.actionBindingBindingSource;
             this.dgv_Actions.Location = new System.Drawing.Point(12, 32);
@@ -136,7 +138,7 @@
             this.dgv_Actions.ShowCellToolTips = false;
             this.dgv_Actions.ShowEditingIcon = false;
             this.dgv_Actions.ShowRowErrors = false;
-            this.dgv_Actions.Size = new System.Drawing.Size(1046, 252);
+            this.dgv_Actions.Size = new System.Drawing.Size(1084, 252);
             this.dgv_Actions.TabIndex = 1;
             this.dgv_Actions.SelectionChanged += new System.EventHandler(this.dgv_Actions_SelectionChanged);
             // 
@@ -182,6 +184,14 @@
             this.EntryText.Name = "EntryText";
             this.EntryText.ReadOnly = true;
             // 
+            // DelayMS
+            // 
+            this.DelayMS.DataPropertyName = "DelayMS";
+            this.DelayMS.FillWeight = 13F;
+            this.DelayMS.HeaderText = "Delay (ms)";
+            this.DelayMS.Name = "DelayMS";
+            this.DelayMS.ReadOnly = true;
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -224,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 323);
+            this.ClientSize = new System.Drawing.Size(1108, 323);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Add);
@@ -259,6 +269,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Split;
         private System.Windows.Forms.DataGridViewTextBoxColumn EntryText;
         private System.Windows.Forms.DataGridViewTextBoxColumn endTextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DelayMS;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotkeyDataGridViewTextBoxColumn;
     }
 }

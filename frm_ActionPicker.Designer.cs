@@ -92,7 +92,7 @@
             this.dgv_Actions.ShowCellToolTips = false;
             this.dgv_Actions.ShowEditingIcon = false;
             this.dgv_Actions.ShowRowErrors = false;
-            this.dgv_Actions.Size = new System.Drawing.Size(743, 126);
+            this.dgv_Actions.Size = new System.Drawing.Size(833, 126);
             this.dgv_Actions.TabIndex = 0;
             this.dgv_Actions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Actions_CellContentClick);
             this.dgv_Actions.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Actions_CellFormatting);
@@ -261,7 +261,7 @@
             this.dgv_LastApplications.ShowCellToolTips = false;
             this.dgv_LastApplications.ShowEditingIcon = false;
             this.dgv_LastApplications.ShowRowErrors = false;
-            this.dgv_LastApplications.Size = new System.Drawing.Size(743, 133);
+            this.dgv_LastApplications.Size = new System.Drawing.Size(833, 133);
             this.dgv_LastApplications.TabIndex = 25;
             this.dgv_LastApplications.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_LastApplications_DataError);
             // 
@@ -323,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 397);
+            this.ClientSize = new System.Drawing.Size(857, 397);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgv_LastApplications);
             this.Controls.Add(this.lbl_ClipboardStatus);

@@ -35,6 +35,7 @@ namespace Paster.Classes
         public string EntryText { get; set; }
         [JsonProperty("endtext")]
         public string EndText { get; set; }
+        [JsonProperty("delayms")] public int DelayMS { get; set; }
         [JsonProperty("hotkey")]
         public WindowsHelper.Hotkey Hotkey { get; set; }
         [JsonIgnore]
@@ -45,6 +46,7 @@ namespace Paster.Classes
         {
             this.ID = Guid.NewGuid().ToString();
             this.PastingAction = Action.AutoType;
+            this.DelayMS = 0;
         }
 
         public PasteAction(
@@ -54,7 +56,9 @@ namespace Paster.Classes
             bool ReplaceNewlineWithEntryText,
             bool ClearClipboardAfterPaste,
             string Split,
-            string EntryText, string EndText,
+            string EntryText,
+            string EndText,
+            int DelayMS,
             WindowsHelper.Hotkey Hotkey)
         {
             this.ID = ID;
@@ -65,6 +69,7 @@ namespace Paster.Classes
             this.Split = Split;
             this.EntryText = EntryText;
             this.EndText = EndText;
+            this.DelayMS = DelayMS;
             this.Hotkey = Hotkey;
         }
 
@@ -159,42 +164,50 @@ namespace Paster.Classes
                 ClipboardArray = NewData;
             }
 
-            // Create the output string to type
-            string Output = "";
-            foreach(string entry in ClipboardArray)
-            {
-                Output += entry + this.EntryText;
-            }
-            if(!string.IsNullOrEmpty(this.EntryText))
-            {
-                if (Output.EndsWith(this.EntryText + this.EntryText))
-                {
-                    Output = Output.Substring(0, Output.LastIndexOf(this.EntryText));
-                }
-            }
-            if(!string.IsNullOrEmpty(this.EndText)) { Output += this.EndText; } // Add the end text
-
+            // Set the target window active
             WindowsHelper.SetForegroundWindow(WindowHandle);
-            if(State == Application.WindowState.Maximized)
+            if (State == Application.WindowState.Maximized)
             {
                 WindowsHelper.ShowWindowAsync(WindowHandle, (int)WindowsHelper.ShowWindowEnum.ShowMaximized); // Keep the window maximized if it already is
-            } 
+            }
             else
             {
                 WindowsHelper.ShowWindowAsync(WindowHandle, (int)WindowsHelper.ShowWindowEnum.ShowNormal); // Open minizmized windows and keep normal windows normal
             }
-            
-            await Task.Delay(150);
-            if(this.PastingAction == Action.AutoType)
+
+            // Add a small delay before starting typing/pasting
+            await Task.Delay(250);
+
+            int loopCounter = 1;
+            foreach(string entry in ClipboardArray)
             {
-                SendKeys.SendWait(Output);
+                string Output = "";
+                // If the entry is not the last
+                if (loopCounter < ClipboardArray.Count)
+                {
+                    Output = entry + this.EntryText;
+                } else // If the entry is the last
+                {
+                    if (!string.IsNullOrEmpty(this.EndText)) { Output = this.EndText; } // Add the end text
+                }
+                
+                // Make the action
+                if (this.PastingAction == Action.AutoType)
+                {
+                    SendKeys.SendWait(Output);
+                }
+                else if (this.PastingAction == Action.Paste)
+                {
+                    Clipboard.SetText(Output);
+                    SendKeys.Send("^v");
+                }
+
+                // Add a delay if specified
+                if(this.DelayMS > 0)
+                {
+                    await Task.Delay(this.DelayMS);
+                }
             }
-            else if(this.PastingAction == Action.Paste)
-            {
-                Clipboard.SetText(Output);
-                SendKeys.Send("^v");
-            }
-            
 
             if(this.ClearClipboard) {
                 Clipboard.Clear(); 

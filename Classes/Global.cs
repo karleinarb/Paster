@@ -142,6 +142,7 @@ namespace Paster.Classes
                     "",
                     "",
                     "",
+                    0,
                     null
                 ),
             new PasteAction("{00000000-0000-0000-0000-000000000000}",
@@ -152,6 +153,7 @@ namespace Paster.Classes
                     "",
                     "",
                     "",
+                    0,
                     new WindowsHelper.Hotkey((int)WindowsHelper.KeyModifier.Alt + WindowsHelper.KeyModifier.Control, Keys.Q)
                 ),
                 new PasteAction("{CEC8C6FF-FDEF-4301-90A0-D367CDD561DB}",
@@ -162,6 +164,7 @@ namespace Paster.Classes
                     "",
                     "",
                     "",
+                    0,
                     new WindowsHelper.Hotkey((int)WindowsHelper.KeyModifier.Alt + WindowsHelper.KeyModifier.Control, Keys.W)
                 ),
                 new PasteAction("{18E870FA-B43E-4E8C-9966-A63B4BCD7D3C}",
@@ -172,6 +175,7 @@ namespace Paster.Classes
                     "",
                     "{TAB}",
                     "{ENTER}",
+                    0,
                     new WindowsHelper.Hotkey((int)WindowsHelper.KeyModifier.Alt + WindowsHelper.KeyModifier.Control, Keys.E)
                 )
     };
